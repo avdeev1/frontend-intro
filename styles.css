@@ -1,0 +1,111 @@
+body {
+	width: 100vw;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 20px;
+
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #262822;
+	color: white;
+	line-height: 22px;
+
+}
+
+section {
+	margin-top: 50px;
+}
+
+.title-lesson {
+	font-weight: bold;
+	text-align: center;
+}
+
+.code-example {
+	display: inline-block;
+	background-color: #333;
+	border-color: #444;
+	font-weight: bold;
+
+	font-size: 22px;
+}
+
+.code-example2 {
+	padding: 10px;
+
+	margin: 0;
+}
+
+.code-example3 {
+	font-size: 14px;
+}
+
+mark {
+	background-color: #fff;
+}
+
+.nowrap {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.code-example-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.code-hello-world {
+	margin: 20px 0;
+	font-size: 18px;
+}
+
+iframe {
+	border: 1px solid white;
+	background-color: #fff;
+}
+
+hr {
+	margin: 40px 0;
+}
+
+
+.example1-description li {
+	margin-bottom: 20px;
+}
+
+.semantic-link {
+	color: white;
+}
+
+.semantic-link:visited {
+	color: white;
+}
+
+.leaf a {
+	color: white;
+}
+
+.leaf a:visited {
+	color: white;
+}
+
+@media screen and (max-device-width: 500px) {
+	body {
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 24px;
+	}
+
+	.code-example {
+		font-size: 8px;
+		white-space: pre-wrap;
+	}
+
+	img {
+		width: 300px;
+	}
+}

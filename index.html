@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Урок 1</title>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+	<h1 class="title-lesson">
+		Урок 1: Знакомство с HTML
+	</h1>
+
+	<hr>
+
+	<section>
+		<h2>1. Что такое HTML?</h2>
+		<p class="html-description">
+			<i>HTML</i> (HyperText Markup Language — «язык гипертекстовой разметки») —
+			стандартизированный язык разметки документов.
+
+			<hr>
+
+			Язык HTML отвечает за&nbsp;структуру и&nbsp;содержание страницы.
+			Он&nbsp;состоит из&nbsp;тегов, а&nbsp;тег состоит из&nbsp;имени, заключённого между знаками «меньше» и&nbsp;«больше».
+
+			<br>Примеры тегов:
+			<code class="code-example">&lt;h1&gt;</code>,
+			<code class="code-example">&lt;p&gt;</code>,
+			<code class="code-example">&lt;ul&gt;</code>.
+		</p>
+
+		<p>
+			Теги бывают парными и&nbsp;одиночными.
+			Парные теги могут содержать текст и&nbsp;другие теги.
+			У&nbsp;парных тегов, в&nbsp;отличие от&nbsp;одиночных, есть вторая половинка&nbsp;—
+			закрывающий&nbsp;тег. В&nbsp;закрывающих тегах перед именем ставится символ
+			<code>/</code>:
+		</p>
+
+		<pre class="code-example code-example2"><code>&lt;h1&gt;Текст заголовка<mark>&lt;/h1&gt;</mark></code></pre>
+
+		<hr>
+
+		<p>
+			Код, заключённый между символами <code class="nowrap">&lt;!--</code>&nbsp;и&nbsp;<code class="nowrap">--&gt;</code>, работать не&nbsp;будет.
+			Если эти символы удалить, то&nbsp;код заработает.
+			С&nbsp;помощью комментариев обычно <em>временно</em> отключают какой-то код или оставляют подсказки и&nbsp;разъяснения.</p>
+	</section>
+
+	<hr>
+
+	<section>
+		<h2>2. Структура HTML документа</h2>
+
+		<div>
+			Самый простой HTML документ выглядит примерно так:<br>
+
+			<div class="code-example-container">
+
+				<pre class="code-example code-example2 code-hello-world">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;title&gt;Hello world!&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div&gt;Hello world&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+
+				<div style="margin-bottom: 10px;">
+					Снизу пример того, как он будет отбражаться в браузере.
+				</div>
+				<iframe src="./example1.html" frameborder="0"></iframe>
+
+			</div>
+
+		</div>
+
+		<hr>
+
+		<h3>Теперь рассмотрим каждую строчку документа</h3>
+
+		<ol class="example1-description">
+			<li>
+				<code class="code-example code-example3">&lt;!DOCTYPE html&gt;</code>
+				— Элемент &lt;!doctype&gt; — DTD (document type definition, описание типа документа) указывает тип документа,
+				который используется при написании html кода. Это непарный тег,
+				который должен стоять самым первым в коде каждой страницы вашего сайта.
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;html&gt;</code>
+				— Тег &lt;html&gt; является контейнером, который заключает в себе все содержимое веб-страницы,
+				включая теги &lt;head&gt; и &lt;body&gt;.
+				Открывающий и закрывающий теги &lt;html&gt; в документе необязательны, но хороший стиль диктует непременное их использование.
+				Как правило, тег &lt;html&gt; идет в документе вторым, после определения типа документа (Document Type Definition, DTD),
+				устанавливаемого через элемент &lt;!DOCTYPE&gt;. Закрывающий тег &lt;html&gt; должен всегда стоять в документе последним.
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;head&gt;</code>
+				— Тег &lt;head&gt; предназначен для хранения других элементов,
+				цель которых — помочь браузеру в работе с данными.
+				Также внутри контейнера &lt;head&gt; находятся метатеги,
+				которые используются для хранения информации предназначенной для браузеров и поисковых систем. Например, механизмы поисковых систем обращаются к метатегам для получения описания сайта, ключевых слов и других данных.
+				Содержимое тега &lt;head&gt; не отображается напрямую на веб-странице,
+				за исключением тега &lt;title&gt; устанавливающего заголовок окна веб-страницы.
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;meta charset="UTF-8"&gt;</code>
+				— Указывает кодировку документа.
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;title&gt;Hello world!&lt;/title&gt;</code>
+				— Указывает заголовок страницы.
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;/head&gt;</code>
+				— Закрывающий тег
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;body&gt;</code>
+				— Элемент &lt;body&gt; предназначен для хранения содержания веб-страницы (контента),
+				отображаемого в окне браузера.
+				Информацию, которую следует выводить в документе,
+				следует располагать именно внутри контейнера &lt;body&gt;.
+				К такой информации относится текст, изображения, теги, скрипты JavaScript и т.д.
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;div&gt;Hello world&lt;/div&gt;</code>
+				— Блок с контентом (текстом).
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;/body&gt;</code>
+				— Закрывающий тег
+			</li>
+
+			<li>
+				<code class="code-example code-example3">&lt;/html&gt;</code>
+				— Закрывающий тег
+			</li>
+		</ol>
+	</section>
+
+	<hr>
+
+	<section>
+		<h2>3. Вложенность тегов</h2>
+
+		<div>
+			В парные теги можно вкладывать другие теги. Например, как в списках: <br>
+			<pre class="code-example code-example2" style="margin-top: 10px;"><code>
+&lt;ul&gt;
+   &lt;li&gt;Элемент списка&lt;/li&gt;
+&lt;/ul&gt;
+			</code></pre>
+		</div>
+
+		<div style="margin-top: 20px;">
+			У вложенных тегов всегда нужно следить за правильным порядком закрытия.
+			Вложенный тег не может закрываться позже родительского:
+
+			<pre class="code-example code-example2"><code>
+&lt;ul&gt;<b style="color: #f05a28;">&lt;li&gt;</b>Элемент списка&lt;/ul&gt;<b style="color: #f05a28;">&lt;/li&gt;</b> &lt;!-- Плохо  --&gt;
+&lt;ul&gt;<b style="color: #69b253;">&lt;li&gt;</b>Элемент списка<b style="color: #69b253;">&lt;/li&gt;</b>&lt;/ul&gt; &lt;!-- Хорошо --&gt;</code></pre>
+		</div>
+
+		<div style="font-size: 20px; color: red; margin-top: 20px; font-weight: bold;">
+			НО:
+			<span style="color: white">
+				В тег &lt;p&gt; НЕЛЬЗЯ вкладывать другие блочные теги (&lt;div&gt;, &lt;h1&gt;, и тд)!
+			</span>
+		</div>
+	</section>
+
+	<hr>
+
+	<section>
+		<h2>4. Семантические теги</h2>
+
+		<div>
+			В последнем стандарте HTML (HTML5) появились семантические теги - теги, которые описывают,
+			что они означают с помощью своего названия.
+			<br>
+
+			Примеры семантических тегов:
+
+			<ul>
+				<li>
+					<code class="code-example code-example3">&lt;header&gt;</code>
+					- Элемент &lt;header&gt; предназначен для определения заголовочного блока или "шапки" документа или раздела.
+
+						Элемент &lt;header&gt; следует использовать как контейнер для вводной информации.
+
+						В одном документе разрешается определять несколько элементов &lt;header&gt;.
+				</li>
+
+				<li>
+					<code class="code-example code-example3">&lt;nav&gt;</code>
+					- основной блок навигационных ссылок
+				</li>
+
+				<li>
+					<code class="code-example code-example3">&lt;section&gt;</code>
+					- раздел в документе
+				</li>
+
+				<li>
+					<code class="code-example code-example3">&lt;footer&gt;</code>
+					- "подвал" страницы (автор страницы, различные ссылки на контакты).
+				</li>
+
+				<li>
+					Более подробная информация по семантическим тегам
+					<a
+						class="semantic-link"
+						target="_blank"
+						href="https://html5css.ru/html/html5_semantic_elements.php"
+					>
+						здесь
+					</a>
+				</li>
+			</ul>
+
+		</div>
+	</section>
+
+	<hr>
+
+	<section>
+		<h2>5. Виды тегов</h2>
+
+		<div>
+			<ul>
+				<li class="leaf"><a target="_blank" href="http://htmlbook.ru/samhtml/tipy-tegov/tegi-verkhnego-urovnya">Теги верхнего уровня</a></li>
+				<li class="leaf"><a target="_blank" href="http://htmlbook.ru/samhtml/tipy-tegov/tegi-zagolovka-dokumenta">Теги заголовка документа</a></li>
+				<li class="leaf"><a target="_blank" href="http://htmlbook.ru/samhtml/tipy-tegov/blochnye-elementy">Блочные элементы</a></li>
+				<li class="leaf"><a target="_blank" href="http://htmlbook.ru/samhtml/tipy-tegov/strochnye-elementy">Строчные элементы</a></li>
+				<li class="leaf"><a target="_blank" href="http://htmlbook.ru/samhtml/tipy-tegov/tegi-dlya-spiskov">Теги для списков</a></li>
+				<li class="leaf"><a target="_blank" href="http://htmlbook.ru/samhtml/tipy-tegov/tegi-dlya-tablits">Теги для таблиц</a></li>
+			</ul>
+		</div>
+
+		<div>
+			Блочные элементы характеризуются тем, что занимают всю доступную ширину,
+			высота элемента определяется его содержимым, и он всегда начинается с новой строки.
+		</div>
+		<br>
+		<div>
+			Строчными называются такие элементы веб-страницы,
+			которые являются непосредственной частью другого элемента, например, текстового абзаца.
+			В основном они используются для изменения вида текста или его логического выделения.
+		</div>
+
+		<br>
+
+		<div>
+			Пример:
+		</div>
+
+		<div style="padding: 20px; background-color: white; color: black">
+			<a target="_blank" href="http://htmlbook.ru/html/a" style="background-color: black; color: white">Еще одна полезная ссылка</a>
+		</div>
+	</section>
+
+	<hr>
+
+	<section>
+		<h2>6. Атрибуты тегов</h2>
+
+		<div>
+			У каждого тега есть свои атрибуты - полезная информация (ссылки, ресурсы, стили).
+		</div>
+		<br>
+
+		<pre><code class="code-example code-example3">&lt;тег атрибут1="значение1" атрибут2="значение2"&gt;</code></pre>
+
+		Например: <br>
+
+		<pre>
+<code class="code-example code-example3">
+&lt;img src="https://cloud.prezentacii.org/18/11/103068/images/screen15.jpg" alt="Картинка" width="400" height="auto"&gt;
+</code>
+		</pre>
+		<img
+			src="https://cloud.prezentacii.org/18/11/103068/images/screen15.jpg"
+			alt="Картинка"
+			width="400"
+			height="auto"
+		>
+	</section>
+
+	<hr>
+
+	<section>
+		<h2>6. Краткое резюме</h2>
+
+		<div>
+			<h3>HTML</h3>
+
+			<p>HTML расшифровывается как «Hypertext Markup Language», то&nbsp;есть «язык гипертекстовой разметки».</p>
+
+			<p>Язык HTML отвечает за&nbsp;структуру и&nbsp;содержание страницы.
+				HTML состоит из&nbsp;тегов, а&nbsp;тег состоит из&nbsp;имени,
+				заключённого между знаками «меньше» и&nbsp;«больше». <br>
+				Примеры тегов:
+				<code class="code-example code-example3">&lt;h1&gt;</code>,
+				<code class="code-example code-example3">&lt;p&gt;</code>,
+				<code class="code-example code-example3">&lt;ul&gt;</code>.
+			</p>
+
+			<p>Теги бывают парными и&nbsp;одиночными. Парные теги могут содержать текст и&nbsp;другие теги. У&nbsp;парных тегов, в&nbsp;отличие от&nbsp;одиночных, есть вторая половинка&nbsp;— закрывающий тег:</p>
+
+			<p>В&nbsp;закрывающей части парных тегов перед именем ставится символ <code>/</code> («слэш»).</p>
+
+			<div>
+				В парные теги можно вкладывать другие теги. Например, как в списках: <br>
+				<pre class="code-example code-example2" style="margin-top: 10px;"><code>
+	&lt;ul&gt;
+	   &lt;li&gt;Элемент списка&lt;/li&gt;
+	&lt;/ul&gt;
+				</code></pre>
+			</div>
+
+			<div style="margin-top: 20px;">
+				У вложенных тегов всегда нужно следить за правильным порядком закрытия.
+				Вложенный тег не может закрываться позже родительского:
+
+				<pre class="code-example code-example2"><code>
+	&lt;ul&gt;<b style="color: #f05a28;">&lt;li&gt;</b>Элемент списка&lt;/ul&gt;<b style="color: #f05a28;">&lt;/li&gt;</b> &lt;!-- Плохо  --&gt;
+	&lt;ul&gt;<b style="color: #69b253;">&lt;li&gt;</b>Элемент списка<b style="color: #69b253;">&lt;/li&gt;</b>&lt;/ul&gt; &lt;!-- Хорошо --&gt;</code></pre>
+			</div>
+
+			<div style="font-size: 20px; color: red; margin-top: 20px; font-weight: bold;">
+				НО:
+				<span style="color: white">
+					В тег &lt;p&gt; НЕЛЬЗЯ вкладывать другие блочные теги (&lt;div&gt;, &lt;h1&gt;, и тд)!
+				</span>
+			</div>
+
+			<hr>
+
+			<p>Существуют не&nbsp;только парные, но&nbsp;и&nbsp;одиночные теги. Например, тег <code>&lt;img&gt;</code> позволяет добавить картинку в&nbsp;разметку.</p>
+
+			<p>У&nbsp;тега может быть несколько атрибутов. В&nbsp;этом случае они пишутся через пробел:</p>
+
+			<pre><code class="code-example code-example3">&lt;тег атрибут1="значение1" атрибут2="значение2"&gt;</code></pre>
+
+			<hr>
+
+			<p>
+				В документе обязательны теги &lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;.
+
+				<li>
+					Тег &lt;!DOCTYPE&gt; - помогает определить браузеру тип HTML.
+				</li>
+
+				<li>
+					Тег &lt;html&gt; является контейнером для тегов &lt;head&gt; и &lt;body&gt;.
+				</li>
+
+				<li>
+					В теге &lt;head&gt; содержится основная информация о сайте/странице.
+				</li>
+
+				<li>
+					В теге &lt;body&gt; пишется вся вёрстка, которая отображается в браузере.
+				</li>
+			</p>
+
+		</div>
+		<div>
+			Семантические теги помогают визуально (по своему названию) определить для чего они предназначены.
+			<a
+				class="semantic-link"
+				target="_blank"
+				href="https://html5css.ru/html/html5_semantic_elements.php"
+			>
+				Ссылка.
+			</a>
+		</div>
+
+		<hr>
+
+		<div>
+			Теги для вёрстки можно разделить на 2 подвида: блочные и строчные (block, inline).
+			Блочные занимают всю ширину родительского элемента.
+		</div>
+	</section>
+
+</body>
+
+</html>
+
